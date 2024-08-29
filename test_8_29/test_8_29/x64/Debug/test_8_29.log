@@ -1,0 +1,3 @@
+﻿  test.c
+D:\Code\C_Code\C_Code\test_8_29\test_8_29\test.c(223,11): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  test_8_29.vcxproj -> D:\Code\C_Code\C_Code\test_8_29\x64\Debug\test_8_29.exe
