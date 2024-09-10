@@ -205,3 +205,78 @@ void SeaContact(Contact* pc)
 	} while (input);
 }
 
+
+
+
+
+//AmeContact
+void AmeContact(Contact* pc)
+{
+	assert(pc);
+
+	if (pc->count == 0)
+	{
+		printf("通讯录为空\n\n\n\n");
+		return;
+	}
+
+	char name[10] = { 0 };
+	printf("请输入被修改人名字>:");
+	scanf("%s", name);
+	int pos = find_name(pc, name);
+
+	if (pos == -1)
+	{
+		printf("联系人不存在\n\n\n");
+		return;
+	}
+	else
+	{
+		//修改
+		printf("请输入修改人名字\n");
+		scanf("%s", pc->date[pos].name);
+
+		printf("请输入修改人年龄\n");
+		scanf("%d", &(pc->date[pos].age));
+
+		printf("请输入修改人性别\n");
+		scanf("%s", pc->date[pos].sex);
+
+		printf("请输入修改人电话\n");
+		scanf("%s", pc->date[pos].tele);
+
+		printf("请输入修改人地址\n");
+		scanf("%s", pc->date[pos].addr);
+
+		printf("修改成功!\n\n\n\n");
+		
+	}
+}
+
+
+
+
+//SortContact
+
+int cmp_by_name(const void* e1, const void* e2)
+{
+	return strcmp(((PeoInfo*)e1)->name, ((PeoInfo*)e2)->name);
+}
+
+void SortContact(const Contact* pc)
+{
+	assert(pc);
+
+	if (pc->count == 0)
+	{
+		printf("通讯录为空\n\n\n");
+		return;
+	}
+
+	qsort(pc->date, pc->count, sizeof(PeoInfo), cmp_by_name);
+
+	printf("排序成功\n\n\n\n");
+
+
+}
+

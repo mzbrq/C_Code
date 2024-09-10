@@ -7,8 +7,10 @@ void menu()
 	printf("***************************\n");
 	printf("*****1. add     2. del*****\n");
 	printf("*****3. search  4. amend***\n");
-	printf("*****5. show    0. exit****\n");
+	printf("*****5. show    6. sort****\n");
+	printf("*****0. exit    ***********\n");
 	printf("***************************\n");
+
 }
 
 int main()
@@ -36,10 +38,13 @@ int main()
 			SeaContact(&con);
 			break;
 		case 4:
-			printf("amend\n");
+			AmeContact(&con);
 			break;
 		case 5:
 			ShowContact(&con);
+			break;
+		case 6:
+			SortContact(&con);
 			break;
 		case 0:
 			printf("�˳�ͨѶ¼\n");

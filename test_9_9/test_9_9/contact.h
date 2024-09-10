@@ -5,6 +5,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<assert.h>
+#include<stdlib.h>
 
 //
 #define MAX 100
@@ -51,4 +52,9 @@ void DelContact(Contact* pc);
 //SeaContact
 void SeaContact(Contact* pc);
 
+//AmeContact
+void AmeContact(Contact* pc);
+
+//Sort
+void SortContact(const Contact* pc);
 
