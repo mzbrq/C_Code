@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\Code\\C_Code\\C_Code\\test_9_9\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F520259A-A58E-4304-9AD8-0D05C618612B}|test_9_9\\test_9_9.vcxproj|D:\\Code\\C_Code\\C_Code\\test_9_9\\test_9_9\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F520259A-A58E-4304-9AD8-0D05C618612B}|test_9_9\\test_9_9.vcxproj|solutionrelative:test_9_9\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F520259A-A58E-4304-9AD8-0D05C618612B}|test_9_9\\test_9_9.vcxproj|D:\\Code\\C_Code\\C_Code\\test_9_9\\test_9_9\\contact.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F520259A-A58E-4304-9AD8-0D05C618612B}|test_9_9\\test_9_9.vcxproj|solutionrelative:test_9_9\\contact.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F520259A-A58E-4304-9AD8-0D05C618612B}|test_9_9\\test_9_9.vcxproj|D:\\Code\\C_Code\\C_Code\\test_9_9\\test_9_9\\contact.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F520259A-A58E-4304-9AD8-0D05C618612B}|test_9_9\\test_9_9.vcxproj|solutionrelative:test_9_9\\contact.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F520259A-A58E-4304-9AD8-0D05C618612B}|test_9_9\\test_9_9.vcxproj|D:\\Code\\C_Code\\C_Code\\test_9_9\\test_9_9\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F520259A-A58E-4304-9AD8-0D05C618612B}|test_9_9\\test_9_9.vcxproj|solutionrelative:test_9_9\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,17 +22,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 350,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "contact.h",
               "DocumentMoniker": "D:\\Code\\C_Code\\C_Code\\test_9_9\\test_9_9\\contact.h",
               "RelativeDocumentMoniker": "test_9_9\\contact.h",
               "ToolTip": "D:\\Code\\C_Code\\C_Code\\test_9_9\\test_9_9\\contact.h",
               "RelativeToolTip": "test_9_9\\contact.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAASAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAADkAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-09-09T06:35:00.108Z",
               "IsPinned": true,
@@ -40,26 +40,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "contact.c",
               "DocumentMoniker": "D:\\Code\\C_Code\\C_Code\\test_9_9\\test_9_9\\contact.c",
               "RelativeDocumentMoniker": "test_9_9\\contact.c",
               "ToolTip": "D:\\Code\\C_Code\\C_Code\\test_9_9\\test_9_9\\contact.c",
               "RelativeToolTip": "test_9_9\\contact.c",
-              "ViewState": "AQIAAPwAAAAAAAAAAAAxwBUBAAAYAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAB8AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-09-09T06:34:42.659Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "test.c",
               "DocumentMoniker": "D:\\Code\\C_Code\\C_Code\\test_9_9\\test_9_9\\test.c",
               "RelativeDocumentMoniker": "test_9_9\\test.c",
               "ToolTip": "D:\\Code\\C_Code\\C_Code\\test_9_9\\test_9_9\\test.c",
               "RelativeToolTip": "test_9_9\\test.c",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAACsAAAAVAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAADEAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-09-09T06:34:23.691Z",
               "EditorCaption": ""

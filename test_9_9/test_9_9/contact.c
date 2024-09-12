@@ -4,23 +4,72 @@
 
 //初始化函数
 
+//静态版本
+
+//void InitContact(Contact* pc)
+//{
+//	memset(pc->date, 0, sizeof(pc->date));
+//	pc->count = 0;
+//
+//}
+
+//动态版本
+
 void InitContact(Contact* pc)
 {
-	memset(pc->date, 0, sizeof(pc->date));
-	pc->count = 0;
+	assert(pc);
 
+	pc->date = (PeoInfo*)calloc(INIT_NUM, sizeof(PeoInfo));
+
+	if (pc->date == NULL)
+	{
+		printf("InitContact::%s\n\n", strerror(errno));
+	}
+
+	pc->count = 0;
+	pc->capacity = 3;
+
+}
+
+//DestroyContact
+void DestroyContact(Contact* pc)
+{
+	assert(pc);
+
+	free(pc->date);
+	pc->date = NULL;
 }
 
 
 //AddContact
+
+void Addcapacity(Contact* pc)
+{
+	PeoInfo* ptr = (PeoInfo*)realloc(pc->date, (pc->count + ADD_capacity) * sizeof(PeoInfo));
+
+	if (ptr == NULL)
+	{
+		printf("Addcapacity::%s\n\n", strerror(errno));
+		printf("增容失败\n\n\n");
+	}
+	else
+	{
+		pc->date = ptr;
+		pc->capacity += ADD_capacity;
+		printf("增容成功\n\n\n");
+
+	}
+}
+
 void AddContact(Contact* pc)
 {
 	assert(pc);
 
-	if (pc->count == MAX)
+	//判断
+	if (pc->count == pc->capacity)
 	{
-		printf("通讯录人数已满\n\n\n\n");
-		return;
+		//增容
+		Addcapacity(pc);
 	}
 
 	printf("请输入添加人名字\n");
