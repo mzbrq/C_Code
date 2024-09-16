@@ -42,6 +42,7 @@ int main()
 			ShowContact(&con);
 			break;
 		case 0:
+			DestoryContact(&con);
 			printf("�˳�ͨѶ¼\n");
 			break;
 		default:

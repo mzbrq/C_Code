@@ -52,3 +52,6 @@ void DelContact(Contact* pc);
 
 //排序通讯录信息
 //void SortContact(Contact* pc);
+
+//销毁通讯录
+void DestoryContact(Contact* pc);

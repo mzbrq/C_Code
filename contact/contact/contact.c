@@ -120,3 +120,10 @@ void DelContact(Contact* pc)
 	}
 
 }
+
+
+//Ïú»ÙÍ¨Ñ¶Â¼
+void DestoryContact(Contact* pc)
+{
+	free()
+}
