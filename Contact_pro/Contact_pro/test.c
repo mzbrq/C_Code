@@ -43,10 +43,10 @@ int main()
 			AddContact(&con);
 			break;
 		case Del:
-			printf("Del\n");
+			DelContact(&con);
 			break;
 		case Search:
-			printf("Search\n");
+			SearchContact(&con);
 			break;
 		case Amend:
 			printf("Amend\n");
@@ -58,6 +58,7 @@ int main()
 			printf("Sort\n");
 			break;
 		case Exit:
+			DestoryContact(&con);
 			printf("�˳�ͨѶ¼\n");
 			break;
 		default :

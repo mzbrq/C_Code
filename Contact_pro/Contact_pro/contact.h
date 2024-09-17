@@ -6,11 +6,12 @@
 #include<string.h>
 #include<stdlib.h>
 #include<errno.h>
+#include<assert.h>
 
 //
 #define MAX 3
 #define NAME_MAX 10
-#define SEX_MAX 5
+#define SEX_MAX 10
 #define ADDR_MAX 20
 
 //人的信息
@@ -43,3 +44,12 @@ void AddContact(Contact* pc);
 
 //展示通讯录
 void ShowContact(const Contact* pc);
+
+//销毁通讯录
+void DestoryContact(Contact* pc);
+
+//删除联系人
+void DelContact(Contact* pc);
+
+//查找联系人
+void SearchContact(Contact* pc);
