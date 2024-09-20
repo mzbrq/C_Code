@@ -53,3 +53,16 @@ void DelContact(Contact* pc);
 
 //查找联系人
 void SearchContact(Contact* pc);
+
+//修改联系人
+
+void AmendContact(Contact* pc);
+
+//排序通讯录
+void SortContact(Contact* pc);
+
+//保存通讯录
+void SaveContact(Contact* pc);
+
+//加载通讯录
+void LoadContact(Contact* pc);

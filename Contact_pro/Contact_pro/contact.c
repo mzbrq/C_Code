@@ -2,10 +2,53 @@
 
 #include"contact.h"
 
+void AddCapacity(Contact* pc)
+{
+	PeoInfo* str = (PeoInfo*)realloc(pc->date, (pc->capacity + MAX) * sizeof(PeoInfo));
+	if (str == NULL)
+	{
+		perror("AddCapacity");
+		return;
+	}
+	pc->date = str;
+	pc->capacity += MAX;
+	printf("增容成功\n\n\n\n");
+}
+
 //初始化函数
+
+void LoadContact(Contact* pc)
+{
+
+	FILE* Fread = fopen("D:\\Code\\C_Code\\C_Code\\Contact_pro\\Contact_pro\\contact.txt", "rb");
+	if (fread == NULL)
+	{
+		perror("LoadContact");
+		return;
+	}
+
+	PeoInfo tmp = { 0 };
+
+	while (fread(&tmp, sizeof(PeoInfo), 1, Fread))
+	{
+		if (pc->count == pc->capacity)
+		{
+			//增容
+			AddCapacity(pc);
+
+		}
+
+		pc->date[pc->count] = tmp;
+
+		pc->count++;
+
+	}
+}
+
 void InitContact(Contact* pc)
 {
 	assert(pc);
+	
 
 	pc->date = (PeoInfo*)calloc(MAX, sizeof(PeoInfo));
 	if (pc->date == NULL)
@@ -16,6 +59,9 @@ void InitContact(Contact* pc)
 
 	pc->count = 0;
 	pc->capacity = MAX;
+
+	//从文件中加载通讯录
+	LoadContact(pc);
 
 }
 
@@ -31,18 +77,6 @@ void DestoryContact(Contact* pc)
 
 //添加通讯录信息
 
-void AddCapacity(Contact* pc)
-{
-	PeoInfo* str = (PeoInfo*)realloc(pc->date, (pc->capacity + MAX) * sizeof(PeoInfo));
-	if (str == NULL)
-	{
-		perror("AddCapacity");
-		return;
-	}
-	pc->date = str;
-	pc->capacity += MAX;
-	printf("增容成功\n\n\n\n");
-}
 
 void AddContact(Contact* pc)
 {
@@ -265,4 +299,126 @@ void SearchContact(const Contact* pc)
 		}
 
 	} while (input);
+}
+
+
+
+
+//修改联系人
+
+int search_name(Contact* pc, char* name)
+{
+	assert(name);
+	int i = 0;
+	for (i = 0; i < pc->count; i++)
+	{
+		if (strcmp(pc->date[i].name, name) == 0)
+		{
+			return i;
+		}
+	}
+
+	return -1;
+}
+
+void AmendContact(Contact* pc)
+{
+	assert(pc);
+
+	if (pc->count == 0)
+	{
+		printf("通讯录为空\n\n\n");
+		return;
+	}
+
+	char name[NAME_MAX] = { 0 };
+
+	printf("请输入要修改人的名字>:");
+	scanf("%s", name);
+	int i = search_name(pc, name);
+
+	if (i == -1)
+	{
+		printf("该联系人不存在\n\n");
+	}
+	else
+	{
+		printf("请输入修改人的名字\n");
+		scanf("%s", pc->date[i].name);
+
+		printf("请输入修改人的性别\n");
+		scanf("%s", pc->date[i].sex);
+
+		printf("请输入修改人的年龄\n");
+		scanf("%d", &pc->date[i].age);
+
+		printf("请输入修改人的电话\n");
+		scanf("%s", pc->date[i].tele);
+
+		printf("请输入修改人的地址\n");
+		scanf("%s", pc->date[i].addr);
+
+		printf("修改成功\n\n\n");
+	}
+
+}
+
+
+
+
+//排序通讯录
+
+int sort_by_name(const void* e1, const void* e2)
+{
+	return strcmp((char*)e1, (char*)e2);
+}
+
+void SortContact(Contact* pc)
+{
+	assert(pc);
+
+	if (pc->count == 0)
+	{
+		printf("通讯录为空\n\n\n");
+	}
+
+	qsort(pc->date[0].name, pc->count, sizeof(PeoInfo), sort_by_name);
+
+	printf("排序成功\n\n\n\n");
+
+}
+
+
+
+
+
+//保存通讯录
+void SaveContact(Contact* pc)
+{
+	assert(pc);
+
+	if (pc->count == 0)
+	{
+		printf("通讯录为空\n\n");
+		return;
+	}
+
+	FILE* pf = fopen("D:\\Code\\C_Code\\C_Code\\Contact_pro\\Contact_pro\\contact.txt", "wb");
+
+	if (pf == NULL)
+	{
+		perror("SaveContact");
+		return;
+	}
+
+	//写入
+	int i = 0;
+	for (i = 0; i < pc->count; i++)
+	{
+		fwrite(pc->date+i, sizeof(PeoInfo), 1, pf);
+	}
+
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
 }

@@ -49,15 +49,16 @@ int main()
 			SearchContact(&con);
 			break;
 		case Amend:
-			printf("Amend\n");
+			AmendContact(&con);
 			break;
 		case Show:
 			ShowContact(&con);
 			break;
 		case Sort:
-			printf("Sort\n");
+			SortContact(&con);
 			break;
 		case Exit:
+			SaveContact(&con);
 			DestoryContact(&con);
 			printf("�˳�ͨѶ¼\n");
 			break;
