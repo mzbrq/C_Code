@@ -4,7 +4,7 @@
 
 void AddCapacity(Contact* pc)
 {
-	PeoInfo* str = (PeoInfo*)realloc(pc->date, (pc->capacity + MAX) * sizeof(PeoInfo));
+	PeoInfo* str = (PeoInfo*)realloc(pc->date, (pc->capacity + 3) * sizeof(PeoInfo));
 	if (str == NULL)
 	{
 		perror("AddCapacity");
@@ -19,6 +19,7 @@ void AddCapacity(Contact* pc)
 
 void LoadContact(Contact* pc)
 {
+	//打开文件
 
 	FILE* Fread = fopen("D:\\Code\\C_Code\\C_Code\\Contact_pro\\Contact_pro\\contact.txt", "rb");
 	if (fread == NULL)
@@ -27,6 +28,7 @@ void LoadContact(Contact* pc)
 		return;
 	}
 
+	//读文件
 	PeoInfo tmp = { 0 };
 
 	while (fread(&tmp, sizeof(PeoInfo), 1, Fread))
@@ -43,6 +45,10 @@ void LoadContact(Contact* pc)
 		pc->count++;
 
 	}
+
+	//关闭文件
+	fclose(Fread);
+	Fread = NULL;
 }
 
 void InitContact(Contact* pc)
@@ -212,36 +218,24 @@ void search_by_name(const Contact* pc)
 
 void search_by_tele(const Contact* pc)
 {
-	int tele[12] = { 0 };
+	char tele[12] = { 0 };
 	printf("请输入被查找人电话>:");
-	scanf("%d", tele);
+	scanf("%s", tele);
 
 	int i = 0;
-	int j = 0;
-	int count = 0;
 
 	for (i = 0; i < pc->count; i++)
 	{
-		for (j = 0; i < 12; j++)
+		if (strcmp(tele, pc->date[i].tele) == 0)
 		{
-			if (pc->date[i].tele[j] == tele[j])
-			{
-
-				if (count == 12)
-				{
-					printf("%-2s\t%-10s\t%-10s\t%-5s\t%-12s\t%-20s\n", "序号", "名字", "性别", "年龄", "电话", "地址");
-					printf("%-d\t%-10s\t%-10s\t%-d\t%-12s\t%-20s\n\n\n", i, pc->date[i].name,
-																		pc->date[i].sex,
-																		pc->date[i].age,
-																		pc->date[i].tele,
-																		pc->date[i].addr);
-					return;
-				}
-				count++;
-				
-			}
-
-		}
+			printf("%-2s\t%-10s\t%-10s\t%-5s\t%-12s\t%-20s\n", "序号", "名字", "性别", "年龄", "电话", "地址");
+			printf("%-d\t%-10s\t%-10s\t%-d\t%-12s\t%-20s\n\n\n", i, pc->date[i].name,
+				                                                 pc->date[i].sex,
+				                                                 pc->date[i].age,
+				                                                 pc->date[i].tele,
+				                                                 pc->date[i].addr);
+			return;
+		}		                                                 
 	}
 
 	printf("该联系人不存在\n\n\n");
