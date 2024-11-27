@@ -4,7 +4,14 @@
 #include"SeqList.h"
 
 
-//初始化
+//静态版本初始化
+//void SeqListInit(SL* ps)
+//{
+//	memset(ps->a, 0, sizeof(SLDataType) * N); // 使用memset函数把数组中每个元素置成0
+//	ps->size = 0;
+//}
+
+//动态初始化
 void SeqListInit(SL* ps)
 {
 	ps->a = NULL;

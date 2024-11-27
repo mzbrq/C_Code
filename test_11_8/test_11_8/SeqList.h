@@ -4,12 +4,14 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
+#include<string.h>
 
 
 typedef int SLDataType;
 
 
 //结构体申明
+//动态版本
 typedef struct SeqList
 {
 	SLDataType* a;
